@@ -11,7 +11,9 @@ def triangle(a, b, c):
     triangle(1, 2, 3) :returns False
     triangle(2, 3, 4) :returns True
     """
-    pass
+    if (a + b) > c and (a + c) > b and (b + c) > a:
+        return True
+    return False
 
 
 @mark.parametrize('data', [
