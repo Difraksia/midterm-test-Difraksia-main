@@ -11,7 +11,17 @@ def factorize(n):
 
     factorize(84) :returns [(2, 2), (3, 1), (7, 1)]  (так как 84 = 2^2 * 3 * 7)
     """
-    pass
+    i = 2
+    z = []
+    while i * i <= n:
+        while n % i == 0:
+            z.append(i)
+            n = n / i
+        i = i + 1
+    if n > 1:
+        z.append(int(n))
+    a = [(i, z.count(i)) for i in sorted(set(z))]
+    return a
 
 
 @mark.parametrize('data', [
