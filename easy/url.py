@@ -10,7 +10,16 @@ def url(s):
 
     url('https://codeforces.com/contests/1607') :returns ('https', 'codeforces.com', 'contests/1607')
     """
-    pass
+    scheme = s.split(':')[0]
+    adress = s.split('/')[2]
+    way = ''
+    count = 0
+    for i in s:
+        if count >= 3:
+            way += i
+        if i == '/':
+            count += 1
+    return tuple([scheme, adress, way])
 
 
 # noinspection HttpUrlsUsage
